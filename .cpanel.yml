@@ -2,4 +2,8 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/mohammed/public_html/mwss/
-    - /bin/cp -a * $DEPLOYPATH
+    
+    # Deploy files but exclude DB config
+    - /bin/rsync -av \
+        --exclude='application/config/database.php' \
+        * $DEPLOYPATH/
