@@ -2,6 +2,6 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/mohammed/public_html/mwss/
-    - /bin/rsync -av --delete \
-        --exclude='application/config/database.php' \
-        ./ $DEPLOYPATH  
+    - /bin/cp $DEPLOYPATH/application/config/database.php /tmp/mwss.database.backup 2>/dev/null || true
+    - /bin/cp -a * $DEPLOYPATH
+    - /bin/cp /tmp/mwss.database.backup $DEPLOYPATH/application/config/database.php 2>/dev/null || true
