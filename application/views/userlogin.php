@@ -60,7 +60,6 @@ if ($this->session->flashdata('message')) {
                                         <form action="<?php echo site_url('site/userlogin') ?>" method="post">
                                             <?php echo $this->customlib->getCSRF(); ?>
                                             <div class="form-group has-feedback">
-                                                <p>Test</p>
                                                 <label class="sr-only" for="form-username">
                                                     <?php echo $this->lang->line('username'); ?></label>
                                                 <input type="text" name="username" value="<?php echo set_value("username"); ?>" placeholder="<?php echo $this->lang->line('username'); ?>" class="form-username form-control" id="email">
