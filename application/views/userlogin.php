@@ -59,6 +59,7 @@ if ($this->session->flashdata('message')) {
 ?>
                                         <form action="<?php echo site_url('site/userlogin') ?>" method="post">
                                             <?php echo $this->customlib->getCSRF(); ?>
+                                            <p>TEST</p>
                                             <div class="form-group has-feedback">
                                                 <label class="sr-only" for="form-username">
                                                     <?php echo $this->lang->line('username'); ?></label>
