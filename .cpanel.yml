@@ -2,8 +2,6 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/mohammed/public_html/mwss/
-    # Copy all files except the local database config file
     - rsync -av --exclude='database.local.php' --exclude='.git/' --exclude='node_modules/' --exclude='*.log' --exclude='.cpanel.yml' ./ $DEPLOYPATH/
-    # Set proper permissions
     - find $DEPLOYPATH -type f -exec chmod 644 {} \;
     - find $DEPLOYPATH -type d -exec chmod 755 {} \;
