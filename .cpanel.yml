@@ -2,6 +2,9 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/mohammed/public_html/mwss/
-    - rsync -av --exclude='database.local.php' --exclude='.git/' --exclude='node_modules/' --exclude='*.log' --exclude='.cpanel.yml' ./ $DEPLOYPATH/
+    - /bin/cp -R * $DEPLOYPATH/
+    - /bin/rm -f $DEPLOYPATH/database.local.php
+    - /bin/rm -f $DEPLOYPATH/.cpanel.yml
+    - /bin/rm -rf $DEPLOYPATH/.git
     - find $DEPLOYPATH -type f -exec chmod 644 {} \;
     - find $DEPLOYPATH -type d -exec chmod 755 {} \;
