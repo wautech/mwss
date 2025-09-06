@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/mohammed/public_html/mwss/
+    - export DEPLOYPATH=/home/mohammed/public_html/mwss
     - /bin/cp -R * $DEPLOYPATH/
     - /bin/rm -f $DEPLOYPATH/database.local.php
     - /bin/rm -f $DEPLOYPATH/.cpanel.yml
